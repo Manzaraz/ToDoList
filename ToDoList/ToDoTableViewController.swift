@@ -14,7 +14,12 @@ class ToDoTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        if let savedTodos = ToDo.loadToDos() {
+            toDos = savedTodos
+        } else {
+            toDos = ToDo.loadSampleToDos()
+        }
         
     }
 
@@ -28,6 +33,7 @@ class ToDoTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        print(toDos.count)
         return toDos.count
     }
 
@@ -38,10 +44,14 @@ class ToDoTableViewController: UITableViewController {
         let toDo = toDos[indexPath.row]
         var content = cell.defaultContentConfiguration()
         content.text = toDo.title
-        cell.contentConfiguration = content       
+        cell.contentConfiguration = content
+        
+        print(toDo)
 
         return cell
     }
+    
+    
 
     /*
     // Override to support conditional editing of the table view.
