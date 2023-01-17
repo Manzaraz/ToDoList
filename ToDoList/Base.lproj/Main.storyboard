@@ -31,7 +31,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="My To-Dos" id="LDg-2p-CCG">
-                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="Eu8-63-W6c"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="pyt-Eh-Ffe">
                             <connections>
                                 <segue destination="fPs-Ok-p04" kind="presentation" id="hcM-tG-a9p"/>
