@@ -23,14 +23,19 @@ class ToDoDetailTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        updateDueDateLabel(date: dueDateDatePicker.date)
         updateSaveButtonState()
-
+        
     }
 
     // MARK: - Helpers
     func updateSaveButtonState() {
         let shouldEnableSaveButton = titleTextField.text?.isEmpty == false
         saveButton.isEnabled = shouldEnableSaveButton
+    }
+    
+    func updateDueDateLabel(date: Date) {
+        dueDateLabel.text = date.formatted(.dateTime.month(.defaultDigits).day().year(.twoDigits).hour().minute())
     }
     
     
@@ -47,6 +52,9 @@ class ToDoDetailTableViewController: UITableViewController {
         isCompleteButton.isSelected.toggle()
     }
     
+    @IBAction func datePickerChanged(_ sender: UIDatePicker) {
+        updateDueDateLabel(date: sender.date)
+    }
     
     
     // MARK: - Table view data source
