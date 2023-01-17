@@ -23,6 +23,7 @@ class ToDoDetailTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        dueDateDatePicker.date = Date().addingTimeInterval(24*60*60)
         updateDueDateLabel(date: dueDateDatePicker.date)
         updateSaveButtonState()
         
