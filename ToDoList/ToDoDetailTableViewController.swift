@@ -31,9 +31,10 @@ class ToDoDetailTableViewController: UITableViewController {
     func updateSaveButtonState() {
         let shouldEnableSaveButton = titleTextField.text?.isEmpty == false
         saveButton.isEnabled = shouldEnableSaveButton
-        
     }
     
+    
+    // MARK: - Actions
     @IBAction func textEditingChanged(_ sender: UITextField) {
         updateSaveButtonState()
     }
@@ -42,6 +43,9 @@ class ToDoDetailTableViewController: UITableViewController {
         sender.resignFirstResponder()
     }
     
+    @IBAction func isCompleteButtonTapped(_ sender: UIButton) {
+        isCompleteButton.isSelected.toggle()
+    }
     
     
     
