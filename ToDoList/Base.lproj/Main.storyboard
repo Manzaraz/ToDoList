@@ -45,7 +45,7 @@
         <!--New To-Do-->
         <scene sceneID="n9s-Kp-AEM">
             <objects>
-                <tableViewController id="l6t-FA-dTz" sceneMemberID="viewController">
+                <tableViewController id="l6t-FA-dTz" customClass="ToDoDetailTableViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="LqS-uN-CuE">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -73,11 +73,18 @@
                                                     <state key="selected" image="checkmark.circle.fill" catalog="system">
                                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="isCompleteButtonTapped:" destination="l6t-FA-dTz" eventType="touchUpInside" id="Hne-I6-ZXK"/>
+                                                    </connections>
                                                 </button>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Remind me to..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fSC-C2-YMU">
                                                     <rect key="frame" x="52" y="8" width="321" height="34.333333333333336"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="returnPressed:" destination="l6t-FA-dTz" eventType="primaryActionTriggered" id="0TD-V9-rBa"/>
+                                                        <action selector="textEditingChanged:" destination="l6t-FA-dTz" eventType="editingChanged" id="VhM-P8-f5t"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -127,6 +134,9 @@
                                             <subviews>
                                                 <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="vmc-Od-DnB">
                                                     <rect key="frame" x="0.0" y="0.0" width="393" height="216.33333333333334"/>
+                                                    <connections>
+                                                        <action selector="datePickerChanged:" destination="l6t-FA-dTz" eventType="primaryActionTriggered" id="pCM-3r-9PH"/>
+                                                    </connections>
                                                 </datePicker>
                                             </subviews>
                                             <constraints>
@@ -184,6 +194,14 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="dueDateDatePicker" destination="vmc-Od-DnB" id="O6T-0C-wbv"/>
+                        <outlet property="dueDateLabel" destination="cEd-HN-pe0" id="CSS-aJ-MoG"/>
+                        <outlet property="isCompleteButton" destination="RNG-Ec-6xM" id="HfD-hm-BBk"/>
+                        <outlet property="notesTextView" destination="U3g-S5-b02" id="Oct-11-8O6"/>
+                        <outlet property="saveButton" destination="IN7-R9-KJ4" id="Chw-yU-TzN"/>
+                        <outlet property="titleTextField" destination="fSC-C2-YMU" id="kQR-5f-ChF"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kvI-Bg-Qfd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="aV0-02-ebG" userLabel="Exit" sceneMemberID="exit"/>
