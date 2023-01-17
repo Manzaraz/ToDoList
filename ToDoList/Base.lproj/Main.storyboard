@@ -78,6 +78,9 @@
                                                     <rect key="frame" x="52" y="8" width="321" height="34.333333333333336"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="textEditingChanged:" destination="l6t-FA-dTz" eventType="editingChanged" id="VhM-P8-f5t"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -189,6 +192,7 @@
                         <outlet property="dueDateLabel" destination="cEd-HN-pe0" id="CSS-aJ-MoG"/>
                         <outlet property="isCompleteButton" destination="RNG-Ec-6xM" id="HfD-hm-BBk"/>
                         <outlet property="notesTextView" destination="U3g-S5-b02" id="Oct-11-8O6"/>
+                        <outlet property="saveButton" destination="IN7-R9-KJ4" id="Chw-yU-TzN"/>
                         <outlet property="titleTextField" destination="fSC-C2-YMU" id="kQR-5f-ChF"/>
                     </connections>
                 </tableViewController>
