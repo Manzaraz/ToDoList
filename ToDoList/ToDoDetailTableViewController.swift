@@ -58,6 +58,7 @@ class ToDoDetailTableViewController: UITableViewController {
         let dueDate = dueDateDatePicker.date
         let notes = notesTextView.text
 
+        toDo = ToDo(title: title, isComplete: isComplete, dueDate: dueDate, notes: notes)
     }
     
     // MARK: - Actions
