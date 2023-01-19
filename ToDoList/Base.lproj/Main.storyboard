@@ -23,6 +23,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="fPs-Ok-p04" kind="presentation" id="fLB-ob-okj"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -135,7 +138,7 @@
                                                 <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="vmc-Od-DnB">
                                                     <rect key="frame" x="0.0" y="0.0" width="393" height="216.33333333333334"/>
                                                     <connections>
-                                                        <action selector="datePickerChanged:" destination="l6t-FA-dTz" eventType="primaryActionTriggered" id="pCM-3r-9PH"/>
+                                                        <action selector="datePickerChanged:" destination="l6t-FA-dTz" eventType="valueChanged" id="f6W-Cl-hMG"/>
                                                     </connections>
                                                 </datePicker>
                                             </subviews>
@@ -217,7 +220,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="l6t-FA-dTz" kind="relationship" relationship="rootViewController" id="SAM-YL-ZlI"/>
+                        <segue destination="l6t-FA-dTz" kind="relationship" relationship="rootViewController" destinationCreationSelector="editToDo:sender:" id="SAM-YL-ZlI"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f8D-X5-gkL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -241,6 +244,9 @@
             <point key="canvasLocation" x="-346" y="15"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="fLB-ob-okj"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>
         <image name="circle" catalog="system" width="128" height="123"/>
