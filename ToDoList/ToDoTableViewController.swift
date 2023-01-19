@@ -42,7 +42,21 @@ class ToDoTableViewController: UITableViewController {
     }
 
     
-    
+    @IBSegueAction func editToDo(_ coder: NSCoder, sender: Any?) -> ToDoDetailTableViewController? {
+        let detailController = ToDoDetailTableViewController(coder: coder)
+        
+        guard let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) else {
+            // if sender is the add button, return an empty controller
+            return detailController
+        }
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        detailController?.toDo = toDos[indexPath.row]
+        
+        return detailController
+    }
+  
     
     
     // MARK: - Table view data source
