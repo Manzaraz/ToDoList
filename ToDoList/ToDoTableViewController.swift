@@ -27,17 +27,22 @@ class ToDoTableViewController: UITableViewController {
     
     
     
-    // unwind segue
+    // unwind & segues
     @IBAction func unwindToToDoList(segue: UIStoryboardSegue) {
         guard segue.identifier == "saveUnwind" else { return }
+        
         let sourceViewController = segue.source as! ToDoDetailTableViewController
-        // Use data from the view controller which initiated the unwind segue
         
         if let toDo = sourceViewController.toDo {
-            let newIndexPath = IndexPath(row: toDos.count, section: 0)
-            
-            toDos.append(toDo)
-            tableView.insertRows(at: [newIndexPath], with: .automatic)
+            if let indexOfExistingToDo = toDos.firstIndex(of: toDo) {
+                toDos[indexOfExistingToDo] = toDo
+                tableView.reloadRows(at: [IndexPath(row: indexOfExistingToDo, section: 0)], with: .automatic)
+            } else {
+                let newIndexPath = IndexPath(row: toDos.count, section: 0)
+                
+                toDos.append(toDo)
+                tableView.insertRows(at: [newIndexPath], with: .automatic)
+            }
         }        
     }
 
