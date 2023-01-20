@@ -79,11 +79,8 @@ class ToDoTableViewController: UITableViewController {
         
         // Configure the cell...
         let toDo = toDos[indexPath.row]
-        var content = cell.defaultContentConfiguration()
-        content.text = toDo.title
-        cell.contentConfiguration = content
-        
-        print(toDo)
+        cell.titleLabel?.text = toDo.title
+        cell.isCompleteButton.isSelected = toDo.isComplete
 
         return cell
     }
