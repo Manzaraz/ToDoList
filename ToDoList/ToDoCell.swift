@@ -7,7 +7,12 @@
 
 import UIKit
 
+protocol TodoCellDelegate: AnyObject {
+    func checkmarkTapped(sender: ToDoCell)
+}
+
 class ToDoCell: UITableViewCell {
+    weak var delegate: TodoCellDelegate?
     
     @IBOutlet var isCompleteButton: UIButton!    
     @IBOutlet var titleLabel: UILabel!
@@ -22,5 +27,10 @@ class ToDoCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
+    // MARK: Actions
+    @IBAction func completeButtonTapped(_ sender: UIButton) {
+        delegate?.checkmarkTapped(sender: self)
+    }
+    
 }

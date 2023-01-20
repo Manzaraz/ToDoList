@@ -7,8 +7,8 @@
 
 import UIKit
 
-class ToDoTableViewController: UITableViewController {
-    
+class ToDoTableViewController: UITableViewController, TodoCellDelegate {
+      
     var toDos = [ToDo]()
     
 
@@ -24,8 +24,6 @@ class ToDoTableViewController: UITableViewController {
         }
         
     }
-    
-    
     
     // unwind & segues
     @IBAction func unwindToToDoList(segue: UIStoryboardSegue) {
@@ -61,13 +59,19 @@ class ToDoTableViewController: UITableViewController {
         
         return detailController
     }
+    
+    // Delegate Method
+    func checkmarkTapped(sender: ToDoCell) {
+        if let indexPath = tableView.indexPath(for: sender) {
+            var toDo = toDos[indexPath.row]
+            toDo.isComplete.toggle()
+            toDos[indexPath.row] = toDo
+            tableView.reloadRows(at: [indexPath], with: .automatic)            
+        }
+    }
   
     
-    
     // MARK: - Table view data source
-
-
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         print(toDos.count)
@@ -81,6 +85,7 @@ class ToDoTableViewController: UITableViewController {
         let toDo = toDos[indexPath.row]
         cell.titleLabel?.text = toDo.title
         cell.isCompleteButton.isSelected = toDo.isComplete
+        cell.delegate = self
 
         return cell
     }

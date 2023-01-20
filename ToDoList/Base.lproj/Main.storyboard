@@ -37,6 +37,7 @@
                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24"/>
                                             </state>
                                             <connections>
+                                                <action selector="completeButtonTapped:" destination="bxj-AR-LMc" eventType="touchUpInside" id="UQm-Ui-F8q"/>
                                                 <action selector="isCompleteButtonTapped:" destination="l6t-FA-dTz" eventType="touchUpInside" id="JoX-Yx-MLs"/>
                                             </connections>
                                         </button>
