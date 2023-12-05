@@ -32,6 +32,7 @@
 		61EC18E62B1EA42C005CA7B4 /* RegisterViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61EC18E52B1EA42C005CA7B4 /* RegisterViewViewModel.swift */; };
 		61EC18E82B1EA449005CA7B4 /* ToDoListItemViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61EC18E72B1EA449005CA7B4 /* ToDoListItemViewViewModel.swift */; };
 		61EC18EA2B1EA888005CA7B4 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61EC18E92B1EA888005CA7B4 /* HeaderView.swift */; };
+		61EC18EC2B1EBDA7005CA7B4 /* TLButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61EC18EB2B1EBDA7005CA7B4 /* TLButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		61EC18E52B1EA42C005CA7B4 /* RegisterViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewViewModel.swift; sourceTree = "<group>"; };
 		61EC18E72B1EA449005CA7B4 /* ToDoListItemViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListItemViewViewModel.swift; sourceTree = "<group>"; };
 		61EC18E92B1EA888005CA7B4 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		61EC18EB2B1EBDA7005CA7B4 /* TLButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				61EC18D32B1EA0EF005CA7B4 /* RegisterView.swift */,
 				61EC18D52B1EA247005CA7B4 /* ToDoListItemView.swift */,
 				61EC18E92B1EA888005CA7B4 /* HeaderView.swift */,
+				61EC18EB2B1EBDA7005CA7B4 /* TLButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				61EC18DC2B1EA3A5005CA7B4 /* MainViewViewModel.swift in Sources */,
 				61EC18CE2B1E9FA4005CA7B4 /* ToDoListView.swift in Sources */,
 				61EC18D42B1EA0EF005CA7B4 /* RegisterView.swift in Sources */,
+				61EC18EC2B1EBDA7005CA7B4 /* TLButton.swift in Sources */,
 				61EC18DE2B1EA3C2005CA7B4 /* ProfileViewViewModel.swift in Sources */,
 				61EC18CC2B1E9F75005CA7B4 /* ProfileView.swift in Sources */,
 				61EC18D82B1EA362005CA7B4 /* User.swift in Sources */,
