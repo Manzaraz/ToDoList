@@ -23,7 +23,7 @@ struct RegisterView: View {
                 
                 TextField("Email Address", text: $email)
                     .textFieldStyle(DefaultTextFieldStyle())
-                    .textInputAutocapitalization(.none)
+                    .textInputAutocapitalization(.never)
                     .autocorrectionDisabled()
                 
                 SecureField("Password", text: $password)
@@ -35,8 +35,6 @@ struct RegisterView: View {
                 ) {
                     // Attempt registration
                 }
-                
-
             }
             .offset(y: -50)
             
