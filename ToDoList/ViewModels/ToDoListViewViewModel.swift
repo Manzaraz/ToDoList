@@ -16,4 +16,8 @@ class ToDoListViewViewModel: ObservableObject {
         
     }
     
+    func delte(id: String) {
+        print("Delete")
+    }
+    
 }
